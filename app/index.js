@@ -9,6 +9,7 @@ let passwordIngresado = prompt("Ingrese su contraseña:");
 
 if (usuarioIngresado === usuarioAutorizado && passwordIngresado === passwordAutorizado) {
     alert("Los datos son correctos, puede ingresar");
+    localStorage.setItem
 } else {
     alert("Los datos son incorrectos");
 }
