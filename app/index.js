@@ -17,17 +17,17 @@ if (usuarioIngresado === usuarioAutorizado && passwordIngresado === passwordAuto
 
 //Intento de calculadora para facturar sesiones
 
-document.getElementById("buscarPaciente").addEventListener("click", function() {
+document.getElementById("buscarPaciente").addEventListener("click", function () {
     let nombrePaciente = document.getElementById("nombrePacienteInput").value;
     mostrarDetallesPaciente(nombrePaciente);
 });
 
-document.getElementById("calcularTotal").addEventListener("click", function() {
+document.getElementById("calcularTotal").addEventListener("click", function () {
     let nombrePaciente = document.getElementById("nombrePaciente").value;
     let mes = document.getElementById("mes").value;
     let cantidadTurnos = parseInt(document.getElementById("cantidadTurnos").value);
     let valorSesion = parseInt(document.getElementById("valorSesion").value);
-    
+
     let total = cantidadTurnos * valorSesion;
 
     let resultado = document.getElementById("resultado");
@@ -41,7 +41,7 @@ document.getElementById("calcularTotal").addEventListener("click", function() {
 
 //Funcion para registrar datos de las sesiones
 
-document.getElementById("guardarDescripcion").addEventListener("click", function() {
+document.getElementById("guardarDescripcion").addEventListener("click", function () {
     let fecha = document.getElementById("fecha").value;
     let paciente = document.getElementById("paciente").value;
     let instrumentos = document.getElementById("instrumentos").value;
@@ -50,11 +50,11 @@ document.getElementById("guardarDescripcion").addEventListener("click", function
     let conclusiones = document.getElementById("conclusiones").value;
 
     let descripcion = `
-        <p><strong>Fecha:</strong> ${fecha}</p>
-        <p><strong>Paciente:</strong> ${paciente}</p>
-        <p><strong>Instrumentos utilizados:</strong> ${instrumentos}</p>
-        <p><strong>Intervenciones:</strong> ${intervenciones}</p>
-        <p><strong>Desempeño de la sesión:</strong></p>
+        <p>Fecha:${fecha}</p>
+        <p>Paciente: ${paciente}</p>
+        <p>Instrumentos utilizados: ${instrumentos}</p>
+        <p>Intervenciones: ${intervenciones}</p>
+        <p>Desempeño de la sesión:</p>
         <p>${desempenio}</p>
         <p><strong>Conclusiones de la sesión:</strong></p>
         <p>${conclusiones}</p>
@@ -64,4 +64,27 @@ document.getElementById("guardarDescripcion").addEventListener("click", function
     resultado.innerHTML = descripcion;
 });
 
+fecha.addEventListener("input", () => {
+    console.log(fecha);
+})
+
+paciente.addEventListener("input", () => {
+    console.log(paciente.value);
+})
+
+instrumentos.addEventListener("input", () => {
+    console.log(instrumento.values);
+})
+
+intervenciones.addEventListener("input", () => {
+    console.log(intervenciones.value);
+})
+
+desempenio.addEventListener("input", () => {
+    console.log(desempenio.value);
+})
+
+conclusiones.addEventListener("input", () => {
+    console.log(conclusiones.value);
+})
 
