@@ -6,10 +6,11 @@
     <title>ESPACIO PSICOPEDAGOGICO</title>
     <link rel="stylesheet" href="images/WhatsApp Image 2024-04-09 at 09.13.26.jpeg" type="images">
     <link rel="stylesheet" href="./pages/style.css">
+    <script defer src="./app/main.js"></script>
+
 </head>
 <body>
-    <script src="./app/index.js"></script>
-    <script src="./app/main.js"></script>
+   
 
     <h1 class="titulo">ESPACIO PSICOPEDAGOGICO</h1>
 
@@ -26,12 +27,31 @@
         </section>
     </div>
 
+            <!-- Formulario para agendar turno -->
+            <h2>Agendar proximo turno</h2>
+            <form id="formulario-turno">
+                <label for="nombre">Nombre del Paciente:</label>
+                <input type="text" id="nombre" required>
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" required>
+                <label for="hora">Hora de la sesion:</label>
+                <input type="time" id="hora" required>
+                <label for="terapeuta">Terapeuta:</label>
+                <select id="terapeuta" required>
+                    <option value="Juan">Juan Velazco</option>
+                    <option value="Maria">Maria del Carmen</option>
+                    <option value="Pedro">Pedro Gomez</option>
+                </select>
+                <button type="submit">Agendar</button>
+            </form>
+        </section>
+
 
 
 
         <div class="container">
             <h1>FACTURACIÓN DE TURNOS</h1>
-            <div id="facturacion">
+            <div class="facturacion">
                 <div>
                     <label for="nombrePaciente">Nombre del paciente:</label>
                     <input type="text" id="nombrePaciente">
@@ -82,7 +102,7 @@
                     <textarea id="conclusiones"></textarea>
                 </div>
                 <button class="button" id="guardarDescripcion">Guardar</button>
-                <div id="resultado"></div>
+                <div id="resultadoSesion"></div>
             </div>
         </div>
 
