@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESPACIO PSICOPEDAGOGICO</title>
     <link rel="stylesheet" href="images/WhatsApp Image 2024-04-09 at 09.13.26.jpeg" type="images">
     <link rel="stylesheet" href="./pages/style.css">
-    <script defer src="./app/main.js"></script>
 
 </head>
+
 <body>
-   
+
+
+    <!-- Intento de logueo -->
+
+    <div class="container">
+        <div id="loginSection">
+            <h1>Iniciar Sesión</h1>
+            <form id="loginForm">
+                <input type="email" id="email" placeholder="Correo electrónico" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+
+    </div>    
+
 
     <h1 class="titulo">ESPACIO PSICOPEDAGOGICO</h1>
 
+
+    <div id="contentSection">   
+        
 
 
     <div class="main-content">
@@ -21,101 +40,102 @@
         <section id="historiaClinica">
             <h2> REVISA LA AGENDA MAYO 2024</h2>
             <img src="/images/Calendario.png" class="calendario" alt="">
-             <input type="text" id="nombrePacienteInput">
+            <input type="text" id="nombrePacienteInput">
             <button class="button" id="buscarPaciente">Agendar</button>
             <div id="detallesPaciente" style="display: none;"></div>
         </section>
     </div>
 
-            <!-- Formulario para agendar turno -->
-            <h2>Agendar proximo turno</h2>
-            <form id="formulario-turno">
-                <label for="nombre">Nombre del Paciente:</label>
-                <input type="text" id="nombre" required>
+    <!-- Formulario para agendar turno -->
+ 
+    <h2>Agendar proximo turno</h2>
+    <form id="formulario-turno">
+        <label for="nombre">Nombre del Paciente:</label>
+        <input type="text" id="nombre" required>
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" required>
+        <label for="hora">Hora de la sesion:</label>
+        <input type="time" id="hora" required>
+        <label for="terapeuta">Terapeuta:</label>
+        <select id="terapeuta" required>
+            <option value="Juan">Juan Velazco</option>
+            <option value="Maria">Maria del Carmen</option>
+            <option value="Pedro">Pedro Gomez</option>
+        </select>
+        <button type="submit">Agendar</button>
+    </form>
+    </section>
+ 
+
+
+
+    <div class="container">
+        <h1>FACTURACIÓN DE TURNOS</h1>
+        <div class="facturacion">
+            <div>
+                <label for="nombrePaciente">Nombre del paciente:</label>
+                <input type="text" id="nombrePaciente">
+            </div>
+            <div>
+                <label for="mes">Mes:</label>
+                <input type="text" id="mes">
+            </div>
+            <div>
+                <label for="cantidadTurnos">Cantidad de turnos:</label>
+                <input type="number" id="cantidadTurnos">
+            </div>
+            <div>
+                <label for="valorSesion">Valor por sesión:</label>
+                <input type="number" id="valorSesion" value="7000" readonly>
+            </div>
+            <button class="button" id="calcularTotal">Calcular Total</button>
+            <div id="resultado"></div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h1>DESCRIPCIÓN DE LA SESIÓN</h1>
+        <div id="descripcionSesion">
+            <div>
                 <label for="fecha">Fecha:</label>
-                <input type="date" id="fecha" required>
-                <label for="hora">Hora de la sesion:</label>
-                <input type="time" id="hora" required>
-                <label for="terapeuta">Terapeuta:</label>
-                <select id="terapeuta" required>
-                    <option value="Juan">Juan Velazco</option>
-                    <option value="Maria">Maria del Carmen</option>
-                    <option value="Pedro">Pedro Gomez</option>
-                </select>
-                <button type="submit">Agendar</button>
-            </form>
-        </section>
-
-
-
-
-        <div class="container">
-            <h1>FACTURACIÓN DE TURNOS</h1>
-            <div class="facturacion">
-                <div>
-                    <label for="nombrePaciente">Nombre del paciente:</label>
-                    <input type="text" id="nombrePaciente">
-                </div>
-                <div>
-                    <label for="mes">Mes:</label>
-                    <input type="text" id="mes">
-                </div>
-                <div>
-                    <label for="cantidadTurnos">Cantidad de turnos:</label>
-                    <input type="number" id="cantidadTurnos">
-                </div>
-                <div>
-                    <label for="valorSesion">Valor por sesión:</label>
-                    <input type="number" id="valorSesion" value="7000" readonly>
-                </div>
-                <button class="button" id="calcularTotal">Calcular Total</button>
-                <div id="resultado"></div>
+                <input type="text" id="fecha">
             </div>
-        </div>
-
-
-        <div class="container">
-            <h1>DESCRIPCIÓN DE LA SESIÓN</h1>
-            <div id="descripcionSesion">
-                <div>
-                    <label for="fecha">Fecha:</label>
-                    <input type="text" id="fecha">
-                </div>
-                <div>
-                    <label for="paciente">Paciente:</label>
-                    <input type="text" id="paciente">
-                </div>
-                <div>
-                    <label for="instrumentos">Instrumentos utilizados:</label>
-                    <input type="text" id="instrumentos">
-                </div>
-                <div>
-                    <label for="intervenciones">Intervenciones:</label>
-                    <input type="text" id="intervenciones">
-                </div>
-                <div>
-                    <label for="desempenio">Desempeño de la sesión:</label>
-                    <textarea id="desempenio"></textarea>
-                </div>
-                <div>
-                    <label for="conclusiones">Conclusiones de la sesión:</label>
-                    <textarea id="conclusiones"></textarea>
-                </div>
-                <button class="button" id="guardarDescripcion">Guardar</button>
-                <div id="resultadoSesion"></div>
+            <div>
+                <label for="paciente">Paciente:</label>
+                <input type="text" id="paciente">
             </div>
+            <div>
+                <label for="instrumentos">Instrumentos utilizados:</label>
+                <input type="text" id="instrumentos">
+            </div>
+            <div>
+                <label for="intervenciones">Intervenciones:</label>
+                <input type="text" id="intervenciones">
+            </div>
+            <div>
+                <label for="desempenio">Desempeño de la sesión:</label>
+                <textarea id="desempenio"></textarea>
+            </div>
+            <div>
+                <label for="conclusiones">Conclusiones de la sesión:</label>
+                <textarea id="conclusiones"></textarea>
+            </div>
+            <button class="button" id="guardarDescripcion">Guardar</button>
+            <div id="resultadoSesion"></div>
         </div>
+    </div>
 
 
-        <div id="historiaclinicapacientes">
+    <div id="historiaclinicapacientes">
 
-            <h1 class="titlehistoriaclinica">HISTORIA CLINICA DE LOS PACIENTES</h1>
+        <h1 class="titlehistoriaclinica">HISTORIA CLINICA DE LOS PACIENTES</h1>
 
         <div class="pacientehistorial1">
             <div class="paciente-info1">
                 <img class="img1" src="./images/niño remera verde.jpg" alt="Foto del paciente">
                 <div class="datos1">
-                    <p><strong>JUAN BAUTISTA  </strong></p>
+                    <p><strong>JUAN BAUTISTA </strong></p>
                     <p>Edad: 5 años</p>
                     <p>Fecha de nacimiento: 06/06/2019</p>
                     <p>Diagnóstico: Sindrome De Asperger</p>
@@ -143,7 +163,7 @@
             <div class="paciente-info3">
                 <img class="img3" src="./images/niña flequillo.jpg" alt="Foto del paciente">
                 <div class="datos3">
-                    <p><strong>OLIVIA  </strong></p>
+                    <p><strong>OLIVIA </strong></p>
                     <p>Edad: 4 años</p>
                     <p>Fecha de nacimiento: 06/08/2020</p>
                     <p>Diagnóstico: Trastorno Espectro Autista, TEA</p>
@@ -231,12 +251,17 @@
             </div>
         </div>
 
-
-
     </div>
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="./app/script.js"></script>
+    <script defer src="./app/main.js"></script>
+
 
 
 
 
 </body>
+
 </html>

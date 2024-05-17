@@ -1,23 +1,47 @@
 
+//logueo//
+let n = ''
+fetch('https://jsonplaceholder.typicode.com/users')
+.then(response => response.json())
+.then(json => n=json);
 
-//Iniciar sesion en la plataforma
 
-let usuarioAutorizado = "Espacio Psicopedagogico";
-let passwordAutorizado = "Espaciopsicope2024";
-let usuarioIngresado = prompt("Ingrese su nombre de usuario:");
-let passwordIngresado = prompt("Ingrese su contraseña:");
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
 
-if (usuarioIngresado === usuarioAutorizado && passwordIngresado === passwordAutorizado) {
-    alert("Los datos son correctos, puede ingresar");
-    localStorage.setItem
-} else {
-    alert("Los datos son incorrectos");
-}
-
+        if (email === 'Consultoriospsp@gmail.com' && password === 'Espaciopsicope2024') {
+            // Inicio de sesión valido
+            Swal.fire({
+                icon: 'success',
+                title: '¡Inicio de sesión exitoso!',
+                text: '¡BIENVENIDO A ESPACIO PSICOPEDAGOGICO!'
+            }).then((result) => {
+            // Muestra el contenido de la página principal
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('contentSection').style.display = 'block';
+                if (result.isConfirmed) {
+                }
+            });
+        } else {
+            // Mensaje de error cuando no coinciden los datos
+            Swal.fire({
+                icon: 'error',
+                title: '¡Error!',
+                text: 'El correo electrónico o la contraseña son incorrectos'
+            });
+        }
+    });
+});
 
 if (localStorage) {
     console.log(localStorage.getItem)
 }
+
+
+
 //Agenda de turnos pacientes 
 
 document.getElementById("buscarPaciente").addEventListener("click", function () {
@@ -27,9 +51,6 @@ document.getElementById("buscarPaciente").addEventListener("click", function () 
     console.log(n)
 
 });
-
-
-
 
 
 //Variables para registrar datos de las sesiones
@@ -42,8 +63,6 @@ let desempenio = document.getElementById("desempenio");
 let conclusiones = document.getElementById("conclusiones");
 
 
-
-
 // Array para almacenar turnos
 let turnos = [];
 
@@ -53,6 +72,10 @@ function agregarTurno(nombre, fecha, hora, terapeuta) {
     console.log("Turno Agendado:");
     console.log(turnos[turnos.length - 1]);
 }
+
+
+
+
 
 // Función para buscar paciente
 function buscarPaciente() {
@@ -135,3 +158,6 @@ document.getElementById("guardarDescripcion").addEventListener("click", function
     let resultadoSesion = document.getElementById("resultadoSesion");
     resultadoSesion.innerHTML = descripcion;
 });
+
+
+
